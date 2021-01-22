@@ -114,14 +114,14 @@ A imagem abaixo mostra um exemplo de utilização de (4) usando um modelo treina
 
 <br />
 <p align="center">
-    <img src="images/teste4.png" alt="Logo" height="128">
+    <img src="images/Teste4.PNG" alt="Logo" height="128">
 </p>
 
 A imagem abaixo mostra um exemplo de utilização de (5) usando um mapa gerado em (4) para comparar com a sua mascara de referencia:
 
 <br />
 <p align="center">
-    <img src="images/teste5.png" alt="Logo" height="128">
+    <img src="images/Teste5.PNG" alt="Logo" height="128">
 </p>
 
 <!-- CONTACT -->
