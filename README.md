@@ -60,9 +60,6 @@ Para isso, definiu-se uma abordagem de segmentação semântica, baseada nas arq
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Pré-requisitos
 
 1. Baixe e instale o Anaconda para Windows (https://www.anaconda.com/products/individual#windows)
@@ -81,6 +78,7 @@ e em seguida instale as bibliotecas do pytorch digitando:
 
 4. Existem outros dependencias que precisam ser instaladas. Para isso, dentro do ambiente do anaconda search e instale as seguintes bibliotecas:
 
+```sh
 > rasterio
 > shapely
 > pyshp
@@ -89,6 +87,7 @@ e em seguida instale as bibliotecas do pytorch digitando:
 > scikit-learn
 > tqdm
 > imgaug
+```
 
 ### Instalação do Plugin
 
