@@ -55,12 +55,6 @@ Este módulo do projeto consiste em desenvolver um sistema automático baseado e
 Para isso, definiu-se uma abordagem de segmentação semântica, baseada nas arquiteturas de redes neurais Deeplab-V3 [1] e Fully Convolutional Network (FCN) [2]. Foi utilizado um dataset construído com imagens do satélite GeoEye, imagens do Modelo Digital de Terreno (MDT) e a Declividade do Terreno (DEC) nos momentos T1, T2 e T3. Tal dataset contém um subconjunto de amostras que foram rotuladas manualmente usando as imagens no tempo T3. Essas amostras são utilizadas como dado de referência para o treinamento do aprendizado supervisionado, enquanto as imagens no tempo T2 e T1 compõem o conjunto de dados de teste.
 
 
-### Built With
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
-
 
 
 <!-- GETTING STARTED -->
@@ -69,29 +63,51 @@ This section should list any major frameworks that you built your project using.
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
+### Pré-requisitos
+<!--
+Este é um exemplo de como listar as coisas de que você precisa para usar o software e como instalá-las.
 * npm
 ```sh
 npm install npm@latest -g
 ```
+-->
 
-### Installation
+1. Download and Install Anaconda for Windows (https://www.anaconda.com/products/individual#windows)
+2. Create a new environment for python 3.8, called 'arc105' (avoid base environment, since it contains unnecessary libs)
+3. In anaconda prompt, chage to new env: 
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
 ```sh
-git clone https://github.com/your_username_/Project-Name.git
+> conda activate 105
 ```
-3. Install NPM packages
+
+and install pytorch using:
+
+```sh
+> conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
+```
+
+4. There are some remains dependencies to install. In anaconda environments, search and install the following libs:
+
+> rasterio
+> shapely
+> pyshp
+> scikit-image
+> tensorboard
+> scikit-learn
+> tqdm
+> imgaug
+
+### Instalação do Plugin
+
+1. Clone/Baixe o repositorio
+```sh
+git clone https://github.com/edemir-matcomp/brumadinho_arcgis_plugin
+```
+2. A instalação do plugin é bastante fácil. A única etapa necessária é copiar este repositório para a pasta em que o ArcGis está instalado. Normalmente, ele pode ser encontrado em C:\Users\Username\Documents\ArcGIS. Em seguida, abra o software ArcGIS e você poderá visualizar o plugin na barra da direita, como pode ser visto na figura abaixo. 
 ```sh
 npm install
 ```
-4. Enter your API in `config.js`
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
+
 
 
 
