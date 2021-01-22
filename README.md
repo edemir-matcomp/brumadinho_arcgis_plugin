@@ -16,7 +16,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 -->
 
-
+## [ArcGIS Plugin] Deep Learning Framework in Brumadinho Area
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -24,8 +24,6 @@
     <img src="images/logo.png" alt="Logo" height="128">
   </a>
 </p>
--->
-
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -46,16 +44,16 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
+Este módulo do projeto consiste em desenvolver um sistema automático baseado em aprendizado profundo para identificar, mapear e quantificar as áreas impactadas pelo desastre, a partir da classificação supervisionada de imagens de alta resolução espacial, utilizando processamento digital de imagens na sub-bacia do Ribeirão Ferro Carvão, em três momentos:
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+* T1: antes do rompimento (entre dezembro de 2018 e 25 jan 2019)
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
+* T2: imediatamente após o rompimento (após 25/jan/2019 até 01 fev 2019)
 
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+* T3: atual (dez/2019 a fev/2020);
+
+Para isso, definiu-se uma abordagem de segmentação semântica, baseada nas arquiteturas de redes neurais Deeplab-V3 [1] e Fully Convolutional Network (FCN) [2]. Foi utilizado um dataset construído com imagens do satélite GeoEye, imagens do Modelo Digital de Terreno (MDT) e a Declividade do Terreno (DEC) nos momentos T1, T2 e T3. Tal dataset contém um subconjunto de amostras que foram rotuladas manualmente usando as imagens no tempo T3. Essas amostras são utilizadas como dado de referência para o treinamento do aprendizado supervisionado, enquanto as imagens no tempo T2 e T1 compõem o conjunto de dados de teste.
+
 
 ### Built With
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
