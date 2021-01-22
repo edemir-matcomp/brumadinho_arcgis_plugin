@@ -96,9 +96,11 @@ e em seguida instale as bibliotecas do pytorch digitando:
 git clone https://github.com/edemir-matcomp/brumadinho_arcgis_plugin
 ```
 2. A instalação do plugin é bastante fácil. A única etapa necessária é copiar este repositório para a pasta em que o ArcGis está instalado. Normalmente, ele pode ser encontrado em C:\Users\Username\Documents\ArcGIS. Em seguida, abra o software ArcGIS e você poderá visualizar o plugin na barra da direita, como pode ser visto na figura abaixo. 
-```sh
-npm install
-```
+
+<br />
+<p align="center">
+    <img src="images/arcmap_plugin.png" alt="Logo" height="512">
+</p>
 
 <!-- USAGE EXAMPLES -->
 ## Exemplo de Uso
