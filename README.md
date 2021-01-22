@@ -64,11 +64,11 @@ Para isso, definiu-se uma abordagem de segmentação semântica, baseada nas arq
 ### Pré-requisitos
 
 1. Baixe e instale o Anaconda para Windows (https://www.anaconda.com/products/individual#windows)
-2. Crie um novo ambient virtual para python 3.8, com o nome 'arc105' (evitaremos o ambiente base, pois contém muitos bibliotecas desnecessarias)
+2. Crie um novo ambient virtual para python 3.8, com o nome 'arc105' (evitaremos utilizar o ambiente base)
 3. Dentro do Anaconda Power shell, mude para o novo ambiente criado digitando:
 
 ```sh
-> conda activate 105
+> conda activate arc105
 ```
 
 e em seguida instale as bibliotecas do pytorch digitando:
@@ -77,7 +77,7 @@ e em seguida instale as bibliotecas do pytorch digitando:
 > conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
 ```
 
-4. Existem outros dependencias que precisam ser instaladas. Para isso, dentro do ambiente do anaconda search e instale as seguintes bibliotecas:
+4. Existem outros dependencias que precisam ser instaladas. Para isso, dentro do ambiente arc105 no anaconda navigator, procure e instale as seguintes bibliotecas:
 
 ```sh
 > rasterio
@@ -128,7 +128,7 @@ A imagem abaixo mostra um exemplo de utilização de (5) usando um mapa gerado e
 
 Uso para Treino:
 
-Caso queira fazer o processo do treinamento da rede, é preciso passar utilizar os scripts de Treinamento:
+Caso queira fazer o processo do treinamento da rede, é preciso passar utilizar os scripts de Treinamento na seguinte ordem:
 * (0) Training :Create Raster Reference Mask from a Shapefile
 * (1) Training :Create Patches without Overlap
 * (2) Training: Training Deep Learning Model for Seg Semantic
