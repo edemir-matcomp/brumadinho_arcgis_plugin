@@ -64,29 +64,22 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ### Pré-requisitos
-<!--
-Este é um exemplo de como listar as coisas de que você precisa para usar o software e como instalá-las.
-* npm
-```sh
-npm install npm@latest -g
-```
--->
 
-1. Download and Install Anaconda for Windows (https://www.anaconda.com/products/individual#windows)
-2. Create a new environment for python 3.8, called 'arc105' (avoid base environment, since it contains unnecessary libs)
-3. In anaconda prompt, chage to new env: 
+1. Baixe e instale o Anaconda para Windows (https://www.anaconda.com/products/individual#windows)
+2. Crie um novo ambient virtual para python 3.8, com o nome 'arc105' (evitaremos o ambiente base, pois contém muitos bibliotecas desnecessarias)
+3. Dentro do Anaconda Power shell, mude para o novo ambiente criado digitando:
 
 ```sh
 > conda activate 105
 ```
 
-and install pytorch using:
+e em seguida instale as bibliotecas do pytorch digitando:
 
 ```sh
 > conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
 ```
 
-4. There are some remains dependencies to install. In anaconda environments, search and install the following libs:
+4. Existem outros dependencias que precisam ser instaladas. Para isso, dentro do ambiente do anaconda search e instale as seguintes bibliotecas:
 
 > rasterio
 > shapely
@@ -108,16 +101,28 @@ git clone https://github.com/edemir-matcomp/brumadinho_arcgis_plugin
 npm install
 ```
 
-
-
-
 <!-- USAGE EXAMPLES -->
-## Usage
+## Exemplo de Uso
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Uso para Teste:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+Caso queira apenas utilizar um modelo já treinado e gerar um novo mapa de predição, iremos utilizar os scripts de Teste:
+* (4) Test: Test Model in new Raster Image
+* (5) Test: Compute Metrics Between new Map and Reference Image
 
+A imagem abaixo mostra um exemplo de utilização de (4) usando um modelo treinado em T3 aplicado para a imagem no tempo T2:
+
+<br />
+<p align="center">
+    <img src="images/teste4.png" alt="Logo" height="128">
+</p>
+
+A imagem abaixo mostra um exemplo de utilização de (5) usando um mapa gerado em (4) para comparar com a sua mascara de referencia:
+
+<br />
+<p align="center">
+    <img src="images/teste5.png" alt="Logo" height="128">
+</p>
 
 <!-- CONTACT -->
 ## Contact
