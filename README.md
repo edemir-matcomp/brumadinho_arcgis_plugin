@@ -125,6 +125,13 @@ A imagem abaixo mostra um exemplo de utilização de (5) usando um mapa gerado e
     <img src="images/Teste5.PNG" alt="Logo" height="512">
 </p>
 
+Uso para Treino:
+
+Caso queira fazer o processo do treinamento da rede, é preciso passar utilizar os scripts de Treinamento:
+* (0) Training :Create Raster Reference Mask from a Shapefile
+* (1) Training :Create Patches without Overlap
+* (2) Training: Training Deep Learning Model for Seg Semantic
+
 <!-- CONTACT -->
 ## Contact
 
