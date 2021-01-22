@@ -90,6 +90,13 @@ e em seguida instale as bibliotecas do pytorch digitando:
 > imgaug
 ```
 
+Exemplo da procura da dependencia 'rasterio' na imagem abaixo:
+
+<br />
+<p align="center">
+    <img src="images/anaconda_navigator.PNG" alt="Logo" height="512">
+</p>
+
 ### Instalação do Plugin
 
 1. Clone/Baixe o repositorio
