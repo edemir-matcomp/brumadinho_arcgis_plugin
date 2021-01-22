@@ -106,7 +106,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- CONTACT -->
 ## Contact
 
-Edemir Ferreira de Andrade Junior - [@your_twitter](https://twitter.com/your_username) - edemir.matcomp@gmail.com
+Edemir Ferreira de Andrade Junior - edemir.matcomp@gmail.com
 
 Project Link: [https://github.com/edemir-matcomp/brumadinho_arcgis_plugin](https://github.com/edemir-matcomp/brumadinho_arcgis_plugin)
 
