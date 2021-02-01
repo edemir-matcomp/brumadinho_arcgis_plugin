@@ -60,6 +60,8 @@ Para isso, definiu-se uma abordagem de segmentação semântica, baseada nas arq
 <!-- GETTING STARTED -->
 ## Começando
 
+Para utilizar o plugin é preciso instalar as dependencias necessarias para que ele funcione. Nesse caso utililizamos o Anaconda para instalar um ambiente virtual com tudo que é necessario para que o plugin funcione. Em adição, utilizamos o Arcgis 10.5.0.6491 em conjunto com o sistema operacional Windows 10.
+
 ### Pré-requisitos
 
 1. Baixe e instale o Anaconda para Windows (https://www.anaconda.com/products/individual#windows)
