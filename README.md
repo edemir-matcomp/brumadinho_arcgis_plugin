@@ -28,18 +28,18 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Uso](#uso)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+* [Sobre o Projeto](#sobre-o-projeto)
+* [Começando](#começando)
+  * [Pré-requisitos](#pré-requisitos)
+  * [Instalação do Plugin](#instalação-do-plugin)
+* [Exemplos de Uso](#exemplos-de-uso)
+* [Contato](#contato)
+* [Agradecimentos](#agradecimentos)
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Sobre o Projeto
 <!--
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 -->
@@ -58,7 +58,7 @@ Para isso, definiu-se uma abordagem de segmentação semântica, baseada nas arq
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Começando
 
 ### Pré-requisitos
 
@@ -110,7 +110,7 @@ git clone https://github.com/edemir-matcomp/brumadinho_arcgis_plugin
 </p>
 
 <!-- USAGE EXAMPLES -->
-## Uso
+## Exemplos de Uso
 
 Uso para Teste:
 
@@ -140,14 +140,14 @@ Caso queira fazer o processo do treinamento da rede, é preciso passar utilizar 
 * (2) Training: Training Deep Learning Model for Seg Semantic
 
 <!-- CONTACT -->
-## Contact
+## Contato
 
 Edemir Ferreira de Andrade Junior - edemir.matcomp@gmail.com
 
 Project Link: [https://github.com/edemir-matcomp/brumadinho_arcgis_plugin](https://github.com/edemir-matcomp/brumadinho_arcgis_plugin)
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+## Agradecimentos
 <!-- * [Img Shields](https://shields.io) -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
