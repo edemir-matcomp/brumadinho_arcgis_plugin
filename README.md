@@ -32,7 +32,7 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Usage](#usage)
+* [Uso](#uso)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -110,7 +110,7 @@ git clone https://github.com/edemir-matcomp/brumadinho_arcgis_plugin
 </p>
 
 <!-- USAGE EXAMPLES -->
-## Exemplo de Uso
+## Uso
 
 Uso para Teste:
 
