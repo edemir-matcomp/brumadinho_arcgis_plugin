@@ -64,9 +64,21 @@ Para utilizar o plugin é preciso instalar as dependencias necessarias para que 
 
 ### Pré-requisitos
 
-1. Baixe e instale o Anaconda para Windows (https://www.anaconda.com/products/individual#windows)
-2. Crie um novo ambient virtual para python 3.8, com o nome 'arc105' (evitaremos utilizar o ambiente base)
-3. Dentro do Anaconda Power shell, mude para o novo ambiente criado digitando:
+1. Baixe e instale o Anaconda para Windows (https://www.anaconda.com/products/individual#windows).
+2. Inicie o Anaconda Navigator e clique em "Ambientes"(Environments) na barra lateral esquerda.
+3. Clique em "Create"(Criar) e crie um novo ambient virtual para python 3.8, com o nome 'arc105' (evitaremos utilizar o ambiente base).
+
+<br />
+<p align="center">
+    <img src="images/anaconda_navigator_create.PNG" alt="Logo" height="512">
+</p>
+
+4. Inicie o "Anaconda Power shell", e mude para o novo ambiente criado digitando:
+
+<br />
+<p align="center">
+    <img src="images/anaconda_powershell_activate.PNG" alt="Logo" height="512">
+</p>
 
 ```sh
 > conda activate arc105
@@ -78,7 +90,7 @@ e em seguida instale as bibliotecas do pytorch digitando:
 > conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
 ```
 
-4. Existem outros dependencias que precisam ser instaladas. Para isso, dentro do ambiente arc105 no anaconda navigator, procure e instale as seguintes bibliotecas:
+5. Existem outras dependencias que precisam ser instaladas. Para isso, dentro do ambiente arc105 no anaconda navigator, procure e instale as seguintes bibliotecas:
 
 ```sh
 > rasterio
