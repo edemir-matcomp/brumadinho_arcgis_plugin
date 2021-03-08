@@ -26,7 +26,7 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+## Índice
 
 * [Sobre o Projeto](#sobre-o-projeto)
 * [Começando](#começando)
