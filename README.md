@@ -52,9 +52,9 @@ Este módulo do projeto consiste em desenvolver um sistema automático baseado e
 
 * T3: atual (dez/2019 a fev/2020);
 
-Para isso, definiu-se uma abordagem de segmentação semântica, baseada nas arquiteturas de redes neurais Deeplab-V3 [1] e Fully Convolutional Network (FCN) [2]. Foi utilizado um dataset construído com imagens do satélite GeoEye, imagens do Modelo Digital de Terreno (MDT) e a Declividade do Terreno (DEC) nos momentos T1, T2 e T3. Tal dataset contém um subconjunto de amostras que foram rotuladas manualmente usando as imagens no tempo T3. Essas amostras são utilizadas como dado de referência para o treinamento do aprendizado supervisionado, enquanto as imagens no tempo T2 e T1 compõem o conjunto de dados de teste.
+<!-- Para isso, definiu-se uma abordagem de segmentação semântica, baseada nas arquiteturas de redes neurais Deeplab-V3 [1] e Fully Convolutional Network (FCN) [2]. Foi utilizado um dataset construído com imagens do satélite GeoEye, imagens do Modelo Digital de Terreno (MDT) e a Declividade do Terreno (DEC) nos momentos T1, T2 e T3. Tal dataset contém um subconjunto de amostras que foram rotuladas manualmente usando as imagens no tempo T3. Essas amostras são utilizadas como dado de referência para o treinamento do aprendizado supervisionado, enquanto as imagens no tempo T2 e T1 compõem o conjunto de dados de teste. -->
 
-
+Para isso, definiu-se uma abordagem de segmentação semântica, baseada na arquitetura de redes neural Fully Convolutional Network (FCN) [1]. Foi utilizado um dataset construído com imagens do sensor de satélite GeoEye nos momentos T3, T2, e imagens do sensor de satélite Pleiades no momento T3. Tal dataset contém para cada momento (T3,T2 e T1) a anotação das classes dos pixels referente a área de cobertura das imagens. As anotações das amostras em T3 são utilizadas parcialmente como dado de referência para o treinamento do aprendizado supervisionado, enquanto as imagens no tempo T2 e T1 compõem o conjunto de dados de teste.
 
 
 <!-- GETTING STARTED -->
