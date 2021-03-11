@@ -154,7 +154,6 @@ Para calcular as metricas entre dois mapas tématicas é necessario que o mapa g
 Assim, como não possua o mapa de referencia em raster, basta utilizar o passo (0) para gerar o mesmo a partir de um formato de shapefile.
 A imagem abaixo mostra um exemplo de utilização de (5) usando um mapa gerado em (4) para comparar com a sua mascara de referencia:
 
-
 <br />
 <p align="center">
     <img src="images/7.PNG" alt="Logo" height="512">
