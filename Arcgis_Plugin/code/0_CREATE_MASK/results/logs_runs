@@ -1,0 +1,26 @@
+Script started on 2020-11-23 13:07:17+0000
+Filling class 0
+Filling class 1
+Filling class 10
+Filling class 11
+Filling class 12
+Filling class 13
+Filling class 2
+Filling class 3
+Filling class 4
+Filling class 5
+Filling class 6
+Filling class 7
+Filling class 8
+Filling class 9
+Traceback (most recent call last):
+  File "create_masks.py", line 131, in <module>
+    main()
+  File "create_masks.py", line 128, in main
+    generate_mask_map_biomas(inRaster_Reference, inShapefile_Reference, outRaster)
+  File "create_masks.py", line 109, in generate_mask_map_biomas
+    dst_bg.write(final_mask_bg, 1)
+  File "rasterio/_io.pyx", line 1358, in rasterio._io.DatasetWriterBase.write
+ValueError: the array's dtype 'int64' does not match the file's dtype 'float32'
+
+Script done on 2020-11-23 13:07:49+0000
