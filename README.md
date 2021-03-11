@@ -120,7 +120,7 @@ git clone https://github.com/edemir-matcomp/brumadinho_arcgis_plugin
 
 <br />
 <p align="center">
-    <img src="images/1_mod.png" alt="Logo" height="512">
+    <img src="images/1_mod.PNG" alt="Logo" height="512">
 </p>
 
 <!-- USAGE EXAMPLES -->
