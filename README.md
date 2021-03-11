@@ -120,7 +120,7 @@ git clone https://github.com/edemir-matcomp/brumadinho_arcgis_plugin
 
 <br />
 <p align="center">
-    <img src="images/arcmap_plugin.png" alt="Logo" height="512">
+    <img src="images/1_mod.png" alt="Logo" height="512">
 </p>
 
 <!-- USAGE EXAMPLES -->
@@ -129,29 +129,64 @@ git clone https://github.com/edemir-matcomp/brumadinho_arcgis_plugin
 Uso para Teste:
 
 Caso queira apenas utilizar um modelo já treinado e gerar um novo mapa de predição, iremos utilizar os scripts de Teste:
-* (4) Test: Test Model in new Raster Image
-* (5) Test: Compute Metrics Between new Map and Reference Image
+* (3) Teste: Computa o Histogram Matching entre a nova imagem e uma imagem de referencia
+* (4) Teste: Usar modelo treinado em uma nova imagem
+* (5) Teste: Calcula metricas de avaliacao entre mapa gerado e mapa de referencia
 
-A imagem abaixo mostra um exemplo de utilização de (4) usando um modelo treinado em T3 aplicado para a imagem no tempo T2:
+O passo (3) é um processo opcional para ser utilizado caso o modelo de treinamento utilizou de imagens provinientes de sensores diferentes da imagem de teste.
+Exemplo: Na imagem de treino T3 foi feito o imageamento utilizando o sensor GeoEye, enquanto na imagem T1 o imageamento foi feito utilizando o Pleiades.
+
+A imagem abaixo mostra um exemplo de utilização de (3) usando a imagem de T3 como histograma de referencia para a imagem no tempo T1:
 
 <br />
 <p align="center">
-    <img src="images/Teste4.PNG" alt="Logo" height="512">
+    <img src="images/5.PNG" alt="Logo" height="512">
 </p>
 
-A imagem abaixo mostra um exemplo de utilização de (5) usando um mapa gerado em (4) para comparar com a sua mascara de referencia:
+A imagem abaixo mostra um exemplo de utilização de (4) usando um modelo treinado em T3 aplicado para a imagem no tempo T1:
 
 <br />
 <p align="center">
-    <img src="images/Teste5.PNG" alt="Logo" height="512">
+    <img src="images/6.PNG" alt="Logo" height="512">
+</p>
+
+Para calcular as metricas entre dois mapas tématicas é necessario que o mapa gerado e o de referencia no formato raster.
+Assim, como não possua o mapa de referencia em raster, basta utilizar o passo (0) para gerar o mesmo a partir de um formato de shapefile.
+A imagem abaixo mostra um exemplo de utilização de (5) usando um mapa gerado em (4) para comparar com a sua mascara de referencia:
+
+
+<br />
+<p align="center">
+    <img src="images/7.PNG" alt="Logo" height="512">
 </p>
 
 Uso para Treino:
 
-Caso queira fazer o processo do treinamento da rede, é preciso passar utilizar os scripts de Treinamento na seguinte ordem:
-* (0) Training :Create Raster Reference Mask from a Shapefile
-* (1) Training :Create Patches without Overlap
-* (2) Training: Training Deep Learning Model for Seg Semantic
+Caso queira fazer o processo do treinamento da rede, é preciso passar utilizar os scripts de treinamento na seguinte ordem:
+* (0) Treino: Cria uma imagem raster a partir do shapefile de referencia
+* (1) Treino: Cria patches de imagens sem sobreposicao
+* (2) Treino: Treina modelo de segmentacao semantica usando deep learning
+
+A imagem abaixo mostra um exemplo de utilização de (0) para criar o rasterizar o shapefile de referencia da imagem de entrada T3
+
+<br />
+<p align="center">
+    <img src="images/2.PNG" alt="Logo" height="512">
+</p>
+
+A imagem abaixo mostra um exemplo de utilização de (1) para criar patches de imagens de T3 que serão usados no processo de treinamento rede
+
+<br />
+<p align="center">
+    <img src="images/3.PNG" alt="Logo" height="512">
+</p>
+
+A imagem abaixo mostra um exemplo de utilização de (2) para criar efetuar o treino da rede usando patches de imagens de T3
+
+<br />
+<p align="center">
+    <img src="images/4.PNG" alt="Logo" height="512">
+</p>
 
 <!-- CONTACT -->
 ## Contato
