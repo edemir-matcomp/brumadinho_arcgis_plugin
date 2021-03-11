@@ -74,7 +74,7 @@ class Train_Model_Tool(object):
         print(inRasterReference)
         print(output_path)
 
-        epochs = 2
+        epochs = 100
         learning_rate = 0.001
         batch = 64
         optimizer_type = 'sgd'
