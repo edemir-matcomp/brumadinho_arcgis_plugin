@@ -22,8 +22,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 class RS_Loader_Semantic_Map(data.Dataset):
     def __init__(self, dataset_path, mean, std, isRGB):
-     
-
+        
         self.isRGB = isRGB
         # Keep list of positions i,j of image crops
         self.list_pos = []
@@ -67,7 +66,6 @@ class RS_Loader_Semantic_Map(data.Dataset):
 
     def __getitem__(self, index):
 
-        print("Index",index)
         # Get new image/mask path
         start_i, start_j = self.list_pos[index]
 
@@ -89,9 +87,8 @@ class RS_Loader_Semantic_Map(data.Dataset):
         if self.transform:
             img = self.transform(crop).float()
 
-        
-        print(img.shape)
-        print(start_i)
-        print(start_j)
+        #print(img.shape)
+        #print(start_i)
+        #print(start_j)
         
         return img, start_i, start_j

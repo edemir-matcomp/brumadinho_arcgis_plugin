@@ -37,9 +37,9 @@ class Preprocessing_HistogramMatch_Tool(object):
             parameterType="Required",
             direction="Input")
 
-        param0.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Geoeye_Raster\Pleiades_T1.tif"
-        param1.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Geoeye_Raster\Geoeye_T3.tif"
-        param2.values = r"D:\Arcgis_Plugin_Saida\results"
+        #param0.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Geoeye_Raster\Pleiades_T1.tif"
+        #param1.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Geoeye_Raster\Geoeye_T3.tif"
+        #param2.values = r"D:\Arcgis_Plugin_Saida\results"
 
         params = [param0, param1, param2]
 

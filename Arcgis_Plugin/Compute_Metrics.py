@@ -41,11 +41,9 @@ class Compute_Metrics_Tool(object):
 
         #param2.filter.list = ['.pt']
 
-        param0.values = r"D:\Arcgis_Plugin_Saida\results\fcn_50_final_map_ft_fold_0.tif"
-        param1.values = r"D:\Arcgis_Plugin_Saida\results\0_CREATE_MASK\reference_merged_T3.tif"
-        param2.values = r"D:\Arcgis_Plugin_Saida\results"
-
-
+        #param0.values = r"D:\Arcgis_Plugin_Saida\results\fcn_50_final_map_ft_fold_0.tif"
+        #param1.values = r"D:\Arcgis_Plugin_Saida\results\0_CREATE_MASK\reference_merged_T3.tif"
+        #param2.values = r"D:\Arcgis_Plugin_Saida\results"
 
         params = [param0, param1, param2]
 

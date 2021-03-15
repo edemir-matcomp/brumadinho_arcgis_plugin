@@ -155,7 +155,6 @@ def main():
         print ('.......Creating model.......')
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         
-        
         if modelpath:
             print('Loading model in: {}'.format(modelpath))
             model = torch.load(modelpath)
@@ -172,11 +171,8 @@ def main():
         model = model.to(device)
         print(model)
         print ('......Model created.......')
-    
-
-            
+       
         indices = get_indices(id_fold, data)
-        
         
         print ('......Creating dataloader......')
         dataloaders_dict = {}
@@ -266,7 +262,8 @@ def main():
                 
         if ignore_zero:
             print('Ignoring Index Zero')
-            criterion = nn.CrossEntropyLoss(ignore_index=254, weight=torch.from_numpy(dataloaders_dict['train'].dataset.class_weights).float().cuda())
+            #criterion = nn.CrossEntropyLoss(ignore_index=254, weight=torch.from_numpy(dataloaders_dict['train'].dataset.class_weights).float().cuda())
+            criterion = nn.CrossEntropyLoss(ignore_index=254, weight=torch.from_numpy(dataloaders_dict['train'].dataset.class_weights).float().to(device))
         else:
             criterion = nn.CrossEntropyLoss()
 

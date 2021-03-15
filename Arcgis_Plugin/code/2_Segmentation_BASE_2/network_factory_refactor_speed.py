@@ -148,6 +148,7 @@ def train(model, dataloaders, criterion, optimizer, num_epochs, epochs_early_sto
     num_classes = dataloaders['train'].dataset.num_classes
     counter_early_stop_epochs = 0
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = model.to(device)
     since = time.time()
     #counter = 0
     val_acc_history = []
@@ -186,14 +187,10 @@ def train(model, dataloaders, criterion, optimizer, num_epochs, epochs_early_sto
                 #print(inputs[0].shape)
                 #imsave('teste.png', np.transpose(inputs[0],(1,2,0)))
                 #imsave('teste_labels.png', labels[0])
-                #exit(1)
                 
                 inputs = inputs.to(device)
                 labels = labels.to(device)
-                
-                # for brumadinho need ignore index 254
-                # mask_pixels = (labels.data != 254).cpu().numpy()
-                
+
                 #print('Imgs Shape', inputs.shape)
                 #print('Mask Shape', labels.shape)
 
@@ -204,11 +201,6 @@ def train(model, dataloaders, criterion, optimizer, num_epochs, epochs_early_sto
                 # track history if only in train
                 with torch.set_grad_enabled(phase == 'train'):
                     # Get model outputs and calculate loss
-                    
-                    # Worth create a function for val phase?
-                    # Get a bigger image(256,256), forward in all windows (128,128) with stride 64 
-                    # and recompile image to output 256,256
-                     
                     outputs = model(inputs)['out']
                     loss = criterion(outputs, labels)
                     
@@ -219,66 +211,18 @@ def train(model, dataloaders, criterion, optimizer, num_epochs, epochs_early_sto
                         loss.backward()
                         optimizer.step()
                         
-                        # Every 5 epochs, decay lr
-                        
-                        #if epoch % 5 == 0 and epoch != 0 and use_weight_decay:
-                        #    scheduler.step()
-                    
-                    
-                    
-               
-
-                # statistics
-                #preds_tmp = preds.data.cpu().numpy().copy()
-                #labels_tmp = labels.data.cpu().numpy().copy()
-                
-                # for brumadinho
-                # preds_tmp = preds_tmp[mask_pixels]
-                # labels_tmp = labels_tmp[mask_pixels]
-                
-                #for p in preds_tmp:
-                #    predictions.append(p.ravel())
-                #for l in labels_tmp: 
-                #    labels_list.append(l.ravel())
-                
                 running_loss += loss.item() * inputs.size(0)
-            
-
-                #print(type(labels_tmp))
-                #print(type(preds_tmp))
-                
-                #print(labels_tmp.shape)
-                #print(preds_tmp.shape)
-                
-                #for brumadinho
-                #cm_train = confusion_matrix(labels_tmp.ravel(), preds_tmp.ravel(), labels=list_classes)
                 
                 t0 = time.time()
-                
-                #l1 = labels.detach().cpu().numpy()
-                #p1 = preds.detach().cpu().numpy()
-                
-                #print("l1 shape {}".format(l1.shape))
-                #print("p1 shape {}".format(p1.shape))
-                
-                #cm_train = confusion_matrix(labels.view(-1).detach(), preds.view(-1).detach(), labels=list_classes)
-                
+
                 cm_train = confusion_matrix_1(labels.view(-1), preds.view(-1), labels=list_classes)
-                #cm_train = confusion_matrix_2(labels.view(-1), preds.view(-1), labels=list_classes)
-                
-                #coffee
-                #cm_train = confusion_matrix(labels_tmp.ravel(), preds_tmp.ravel(), labels=[0,1])
                 cm_total += cm_train
-                #print(cm_total)
                 
                 mean_acc = statistics.balanced_accuracy_score_from_cm(cm_train)
                 f1_score = statistics.f1_score_from_cm(cm_train)
-                
-                #exit(1)
+
                 #print('Time Compute Matrix and detach to numpy {}'.format(time.time()-t0))
-                
                 #print('Total time {}'.format(time.time()-tx))
-                #exit(1)
                
                 ''' '''
                 
@@ -313,14 +257,7 @@ def train(model, dataloaders, criterion, optimizer, num_epochs, epochs_early_sto
                 print('New Best - Epoch: {} Phase: {} Loss: {:.4f} Acc: {:.4f}'.format(epoch, phase, epoch_loss, epoch_acc))
                        
             #print(np.asarray(predictions).shape)
-            #print(np.asarray(predictions).shape)
             #print(np.asarray(labels_list).shape)
-            
-            # TODO SLOW OPERATION
-            #statistics.calculate_metrics(np.asarray(predictions).ravel(), np.asarray(labels_list).ravel(), list_labels=[0,1])
-            
-            #predictions = []
-            #labels_list = []
         
         if (counter_early_stop_epochs >= epochs_early_stop):
             print ('Stopping training because validation loss did not improve in ' + str(epochs_early_stop) + ' consecutive epochs.')
@@ -340,8 +277,8 @@ def final_eval(model, dataloaders, batch, file, list_classes, mode='val'):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
     model.eval()
-    predictions = []
-    labels_list = []
+    #predictions = []
+    #labels_list = []
     num_classes = len(list_classes)
     cm_total = np.zeros((num_classes, num_classes))
     for inputs, labels, inputs_path in dataloaders[mode]:
@@ -360,10 +297,10 @@ def final_eval(model, dataloaders, batch, file, list_classes, mode='val'):
         preds_tmp = preds_tmp[mask_pixels]
         labels_tmp = labels_tmp[mask_pixels]
         
-        for p in preds_tmp:
-            predictions.append(p.ravel())
-        for l in labels_tmp: 
-            labels_list.append(l.ravel())
+        #for p in preds_tmp:
+        #    predictions.append(p.ravel())
+        #for l in labels_tmp: 
+        #    labels_list.append(l.ravel())
             
         '''
         for c in [3,6,9,13]:
@@ -393,13 +330,12 @@ def final_eval(model, dataloaders, batch, file, list_classes, mode='val'):
     file.write("Balanced_Accuracy: " + str(epoch_acc) + "\n")
     file.write("Kappa: " + str(epoch_kappa) + "\n")
     file.write("F1: " + str(epoch_f1) + "\n")
-    #file.close()
      
     #Computa tudo de uma vez, mas em seg semantic pode n ter memoria para isso       
     #statistics.calculate_metrics(predictions, labels_list, file, list_classes)
     
 def create_map(model, inRaster, MDT_Raster, DEC_Raster, num_classes, output_name, size=128):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")   
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
     model.eval()
     predictions = []
@@ -423,18 +359,7 @@ def create_map(model, inRaster, MDT_Raster, DEC_Raster, num_classes, output_name
         if not isRGB:
             MDT_Raster = rasterio.open(MDT_Raster).read()[:,:,:]
             DEC_Raster = rasterio.open(DEC_Raster).read()[:,:,:]
-        
-        #print(image.shape)
-        #print(MDT_Raster.shape)
-        #print(DEC_Raster.shape)
-        
-        
-        #total_w = int(math.ceil(cols/size))
-        #total_h = int(math.ceil(rows/size))
 
-        #TODO: KEEP IN TENSOR TO BE FASTER
-        #final_map = np.zeros((2, rows, cols))
-        
         final_map = torch.from_numpy(np.zeros((num_classes, rows, cols)))
     
         for i in tqdm(range(0,rows,stride)):
@@ -463,7 +388,6 @@ def create_map(model, inRaster, MDT_Raster, DEC_Raster, num_classes, output_name
                 # Selecting only NIR R G
                 crop = crop[:,:,[3,0,1]]
                 #print('Crop Image crop {}'.format(time.time()-t0))
-                
                 
                 '''
                 Load for MDT AND DEC
@@ -495,21 +419,12 @@ def create_map(model, inRaster, MDT_Raster, DEC_Raster, num_classes, output_name
                     t0 = time.time()
                     outputs = model(inputs)['out']
                     #print('Forward crop {}'.format(time.time()-t0))
-                    
-                    #TODO: KEEP IN TENSOR TO FASTER
-                    #final_map[:, 
-                    #          start_i:min(start_i + size, rows),
-                    #          start_j:min(start_j + size, cols)] += outputs[0].cpu().numpy()
                     t0 = time.time()
                     final_map[:, 
                               start_i:min(start_i + size, rows),
                               start_j:min(start_j + size, cols)] += outputs[0].cpu()
                     #print('Sum Final Map {}'.format(time.time()-t0))
-                    
-                    #_, preds = torch.max(outputs, 1)
-                    
-        #TODO: KEEP IN TENSOR TO FASTER
-        #preds = np.argmax(final_map, axis=0)
+
         _, preds = torch.max(final_map, 0)
         
         
@@ -524,7 +439,7 @@ def create_map(model, inRaster, MDT_Raster, DEC_Raster, num_classes, output_name
         print("Save in {}".format(output_name))
         
 def create_map_dataloader(model, inRaster, MDT_Raster, DEC_Raster, output_name):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")   
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
     model.eval()
     
@@ -554,30 +469,22 @@ def create_map_dataloader(model, inRaster, MDT_Raster, DEC_Raster, output_name):
     with torch.set_grad_enabled(False):
 
         for inputs, start_i, start_j in tqdm(loader):
-            #print("New Batch")
             #print("Memory alloc GPU 1", torch.cuda.memory_allocated(0))
             inputs = inputs.to(device)
-            #print("Memory alloc GPU 2", torch.cuda.memory_allocated(0))
-            #print("inputs",inputs.size())
             outputs = model(inputs)['out'].detach().cpu()
-            #print("Memory alloc GPU 3", torch.cuda.memory_allocated(0))
-            #print("outputs",outputs.size())
+            #print("Memory alloc GPU 2", torch.cuda.memory_allocated(0))
 
             for index, out in enumerate(outputs):
                 start_i_tmp = start_i[index]
                 start_j_tmp = start_j[index]
-                #print("start_i_tmp",start_i_tmp)
-                #print("start_j_tmp",start_j_tmp)
-                #print("out size",out.size())
                 final_map[:, 
                             start_i_tmp:min(start_i_tmp + size, rows),
                             start_j_tmp:min(start_j_tmp + size, cols)] += out.detach().cpu()
 
-            #print("Memory alloc GPU 4", torch.cuda.memory_allocated(0))
+            #print("Memory alloc GPU 3", torch.cuda.memory_allocated(0))
                     
     _, preds = torch.max(final_map, 0)
-        
-        
+
     # Save new image georeferenced tif
     preds = preds.cpu().numpy().astype("float32")
     bin_mask_meta = dataset.metadata

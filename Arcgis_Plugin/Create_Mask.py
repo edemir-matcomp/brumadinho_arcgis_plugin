@@ -41,9 +41,9 @@ class Create_Mask_Tool(object):
 
         #param2.filter.list = ['.pt']
 
-        param0.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Geoeye_Raster\Geoeye_T3.tif"
-        param1.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Shapefile\merged_T3\merged_T3.shp"
-        param2.values = r"D:\Arcgis_Plugin_Saida\results\New Folder"
+        #param0.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Geoeye_Raster\Geoeye_T3.tif"
+        #param1.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Shapefile\merged_T3\merged_T3.shp"
+        #param2.values = r"D:\Arcgis_Plugin_Saida\results\New Folder"
 
         params = [param0, param1, param2]
 

@@ -53,11 +53,11 @@ class Evaluate_Model_Tool(object):
             parameterType="Required",
             direction="Input")
 
-        param0.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Geoeye_Raster\Geoeye_T3.tif"
-        param1.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\MDT\MDT_T3_Resampled.tif"
-        param2.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Declividade\Declividade_T3_Resampled.tif"
-        param4.values = r"D:\Arcgis_Plugin_Saida\results\2_Segmentation_BASE\fcn_50_final_model_ft_fold_0"
-        param5.values = r"D:\Arcgis_Plugin_Saida\results"
+        #param0.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Geoeye_Raster\Geoeye_T3.tif"
+        #param1.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\MDT\MDT_T3_Resampled.tif"
+        #param2.values = r"D:\Arcgis_Plugin_Saida\data\brumadinho\Declividade\Declividade_T3_Resampled.tif"
+        #param4.values = r"D:\Arcgis_Plugin_Saida\results\2_Segmentation_BASE\fcn_50_final_model_ft_fold_0"
+        #param5.values = r"D:\Arcgis_Plugin_Saida\results"
 
         params = [param0, param1, param2, param4, param5]
 

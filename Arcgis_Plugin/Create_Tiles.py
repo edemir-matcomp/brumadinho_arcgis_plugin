@@ -56,11 +56,11 @@ class Create_Tiles_Tool(object):
         #param2.filter.list = ['.pt']
 
 
-        param0.values = r"D:\Arcgis_Plugin\data\brumadinho\Geoeye_Raster\Geoeye_T3.tif"
-        param1.values = r"D:\Arcgis_Plugin\data\brumadinho\MDT\MDT_T3_Resampled.tif"
-        param2.values = r"D:\Arcgis_Plugin\data\brumadinho\Declividade\Declividade_T3_Resampled.tif"
-        param3.values = r"D:\Arcgis_Plugin\results\out_raster\mask.tif"
-        param4.values = r"D:\Arcgis_Plugin\results"
+        #param0.values = r"D:\Arcgis_Plugin\data\brumadinho\Geoeye_Raster\Geoeye_T3.tif"
+        #param1.values = r"D:\Arcgis_Plugin\data\brumadinho\MDT\MDT_T3_Resampled.tif"
+        #param2.values = r"D:\Arcgis_Plugin\data\brumadinho\Declividade\Declividade_T3_Resampled.tif"
+        #param3.values = r"D:\Arcgis_Plugin\results\out_raster\mask.tif"
+        #param4.values = r"D:\Arcgis_Plugin\results"
 
         params = [param0, param1, param2, param3, param4]
 

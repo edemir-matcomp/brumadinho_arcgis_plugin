@@ -37,13 +37,22 @@ class Train_Model_Tool(object):
             parameterType="Required",
             direction="Input")
 
-        param2.filter.list = ['.pt']
+        # Third parameter
+        param3 = arcpy.Parameter(
+            displayName="Use MDT and DEC",
+            name="boolean_multiband",
+            datatype="GPBoolean",
+            parameterType="Optional",
+            direction="Input")
 
-        param0.values = r"D:\Arcgis_Plugin_Saida\results\1_PREPARE_DATA\raw_data"
-        param1.values = r"D:\Arcgis_Plugin_Saida\results\0_CREATE_MASK\mask.tif"
-        param2.values = r"D:\Arcgis_Plugin_Saida\results"
+        #param2.filter.list = ['.pt']
 
-        params = [param0, param1, param2]
+        #param0.values = r"D:\Arcgis_Plugin_Saida\results\1_PREPARE_DATA\raw_data"
+        #param1.values = r"D:\Arcgis_Plugin_Saida\results\0_CREATE_MASK\mask.tif"
+        #param2.values = r"D:\Arcgis_Plugin_Saida\results"
+        param3.values = False
+
+        params = [param0, param1, param2, param3]
 
         return params
 
@@ -69,10 +78,19 @@ class Train_Model_Tool(object):
         dataset_path = parameters[0].valueAsText
         inRasterReference = parameters[1].valueAsText
         output_path = parameters[2].valueAsText
+        multiband = str(parameters[3].valueAsText).capitalize()
 
-        print(dataset_path)
-        print(inRasterReference)
-        print(output_path)
+        #print(dataset_path)
+        #print(inRasterReference)
+        #print(output_path)
+        #print(multiband)
+
+        messages.addMessage(dataset_path)
+        messages.addMessage(inRasterReference)
+        messages.addMessage(output_path)
+        
+        #messages.addMessage(multiband)
+        #messages.addMessage(type(multiband))
 
         epochs = 100
         learning_rate = 0.001
@@ -84,7 +102,10 @@ class Train_Model_Tool(object):
         network_type = 'fcn_50'
         only_top_layers = 'False'
         ignore_zero = 'True'
-        isRGB='True'
+        if multiband == 'False':
+            isRGB = "True"
+        else:
+            isRGB = "False"
         use_weight_decay='True'
 
         mydir = os.path.split(os.path.abspath(__file__))[0]
