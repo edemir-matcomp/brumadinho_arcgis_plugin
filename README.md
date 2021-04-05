@@ -34,7 +34,7 @@
   * [Instalação do Plugin](#instalação-do-plugin)
 * [Exemplos de Uso](#exemplos-de-uso)
 * [Contato](#contato)
-* [Agradecimentos](#agradecimentos)
+<!-- * [Agradecimentos](#agradecimentos) -->
 
 
 
