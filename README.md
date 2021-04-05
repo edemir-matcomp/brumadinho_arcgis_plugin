@@ -195,9 +195,11 @@ Edemir Ferreira de Andrade Junior - edemir.matcomp@gmail.com
 Project Link: [https://github.com/edemir-matcomp/brumadinho_arcgis_plugin](https://github.com/edemir-matcomp/brumadinho_arcgis_plugin)
 
 <!-- ACKNOWLEDGEMENTS -->
-## Agradecimentos
+<!-- ## Agradecimentos -->
 <!-- * [Img Shields](https://shields.io) -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
+<!--
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
+-->
